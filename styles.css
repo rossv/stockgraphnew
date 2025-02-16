@@ -10,53 +10,23 @@
   --table-sp500-bg: #FAD0EC;
 }
 
-/* Light theme defaults */
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
   color: #212529;
 }
 
-/* Dark mode overrides */
-body.dark {
-  background-color: #121212;
-  color: #e0e0e0;
+/* Card & Table Styling */
+.card {
+  margin-bottom: 1rem;
+}
+.table th,
+.table td {
+  vertical-align: middle;
 }
 
-body.dark .card {
-  background-color: #1e1e1e;
-  border-color: #333;
-}
-
-body.dark .navbar, 
-body.dark .nav-tabs .nav-link,
-body.dark .list-group-item {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-}
-
-body.dark .table {
-  color: #e0e0e0;
-}
-
-body.dark .table-striped tbody tr:nth-of-type(odd) {
-  background-color: #2a2a2a;
-}
-
-body.dark .table-bordered {
-  border-color: #333;
-}
-
-body.dark .table thead th {
-  background-color: #333;
-  color: #e0e0e0;
-}
-
-body.dark .btn {
-  border-color: #555;
-}
-
-/* Input styling */
+/* Input Styling */
 input[type="range"] {
   width: 100%;
 }

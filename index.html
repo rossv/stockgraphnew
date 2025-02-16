@@ -11,12 +11,11 @@
   <!-- Plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
-<body class="bg-light">
+<body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Stock Dashboard</a>
-      <button class="btn btn-outline-light" id="themeToggle">Toggle Theme</button>
     </div>
   </nav>
 
@@ -40,10 +39,10 @@
       </li>
     </ul>
     <div class="tab-content" id="dashboardTabsContent">
-      <!-- Overview Tab: Investment Inputs and Dynamic Chart -->
+      <!-- Overview Tab: Investment Inputs, Dynamic Chart, and Summary Table -->
       <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
         <div class="row mt-4">
-          <!-- Input Panel -->
+          <!-- Investment Input Panel -->
           <div id="inputPanel" class="col-lg-4 mb-4">
             <div class="card">
               <div class="card-body">
@@ -59,7 +58,7 @@
                     </tr>
                   </thead>
                   <tbody id="sliderTable">
-                    <!-- Rows injected by app.js -->
+                    <!-- Investment rows injected dynamically by app.js -->
                   </tbody>
                 </table>
                 <button id="clearBtn" class="btn btn-secondary">Clear All Values</button>
@@ -89,7 +88,7 @@
                       </tr>
                     </thead>
                     <tbody id="summaryBody">
-                      <!-- Data rows injected by app.js -->
+                      <!-- Summary rows injected dynamically -->
                     </tbody>
                   </table>
                 </div>
@@ -104,33 +103,35 @@
         </div>
       </div>
 
-      <!-- Detailed Analysis Tab: Advanced Metrics & Parameter Controls -->
+      <!-- Detailed Analysis Tab: Extended Table with All Calculated Values -->
       <div class="tab-pane fade" id="detailed" role="tabpanel" aria-labelledby="detailed-tab">
         <div class="row mt-4">
-          <!-- Parameters Panel -->
-          <div class="col-lg-4 mb-4">
+          <div class="col-12 mb-4">
             <div class="card">
               <div class="card-body">
-                <h2 class="card-title">Advanced Parameters</h2>
-                <div class="mb-3">
-                  <label for="matchRateInput" class="form-label">Match Rate (%)</label>
-                  <input type="number" id="matchRateInput" class="form-control" value="25" min="0" max="100">
-                </div>
-                <div class="mb-3">
-                  <label for="vestingInput" class="form-label">Vesting Period (years)</label>
-                  <input type="number" id="vestingInput" class="form-control" value="5" min="1" max="20">
-                </div>
-                <button id="applyParams" class="btn btn-primary">Apply Parameters</button>
-              </div>
-            </div>
-          </div>
-          <!-- Metrics Panel -->
-          <div class="col-lg-8 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="card-title">Advanced Metrics</h2>
-                <div id="detailedMetrics">
-                  <!-- Advanced metrics (ROI, CAGR, etc.) will be injected here -->
+                <h2 class="card-title">Detailed Analysis</h2>
+                <div class="table-responsive">
+                  <table id="detailedTable" class="table table-bordered">
+                    <thead class="table-primary">
+                      <tr>
+                        <th>Year</th>
+                        <th>Stock Price</th>
+                        <th>Invested<br>This Year</th>
+                        <th>Cumulative<br>Invested</th>
+                        <th>Employee<br>Shares (Year)</th>
+                        <th>Cumulative<br>Employee Shares</th>
+                        <th>Match Awarded<br>This Year</th>
+                        <th>Cumulative<br>Match Awarded</th>
+                        <th>Employee<br>Value</th>
+                        <th>Match<br>Value</th>
+                        <th>Total<br>Value</th>
+                        <th>S&P500</th>
+                      </tr>
+                    </thead>
+                    <tbody id="detailedBody">
+                      <!-- Detailed rows injected dynamically -->
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

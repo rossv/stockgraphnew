@@ -1,0 +1,54 @@
+:root {
+  --main-green: rgb(67,176,42);
+  --main-gray: rgb(99,102,106);
+  --main-blue: rgb(0,130,186);
+  --invested-color: rgb(198,54,99);
+  --header-blue: #0082BA;
+  --table-invested-bg: #E0E0E0;
+  --table-emp-bg: #C3E7C9;
+  --table-total-bg: #B3D7F2;
+  --table-sp500-bg: #FAD0EC;
+}
+
+/* Dark mode overrides */
+body.dark {
+  background-color: #2c2c2c;
+  color: #ddd;
+}
+
+body.dark .card {
+  background-color: #3c3c3c;
+  border: 1px solid #555;
+}
+
+body.dark .table {
+  color: #ddd;
+}
+
+body.dark .table-striped tbody tr:nth-of-type(odd) {
+  background-color: #444;
+}
+
+body.dark .table-bordered {
+  border-color: #555;
+}
+
+body.dark .navbar, 
+body.dark .list-group-item {
+  background-color: #1a1a1a;
+  color: #ddd;
+}
+
+/* Investment input styling */
+input[type="range"] {
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 100px;
+  text-align: right;
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

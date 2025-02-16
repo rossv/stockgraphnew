@@ -21,77 +21,162 @@
   </nav>
 
   <div class="container-fluid mt-4">
-    <div class="row">
-      <!-- Sidebar Navigation -->
-      <aside class="col-md-2 mb-3">
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action active">Overview</a>
-          <a href="#" class="list-group-item list-group-item-action">Detailed Analysis</a>
-          <a href="#" class="list-group-item list-group-item-action">Scenario Comparison</a>
-        </div>
-      </aside>
-
-      <!-- Main Content -->
-      <main class="col-md-10">
-        <h1 class="text-center mb-4">Stock Investment Calculator</h1>
-        
-        <!-- Investment Input Panel -->
-        <section id="inputPanel" class="card mb-4">
-          <div class="card-body">
-            <h2 class="card-title">Investments by Year</h2>
-            <table class="table table-striped">
-              <thead class="table-primary">
-                <tr>
-                  <th>Year</th>
-                  <th>Stock Price</th>
-                  <th>Investment Range</th>
-                  <th>Investment ($)</th>
-                  <th>Apply to Following Years</th>
-                </tr>
-              </thead>
-              <tbody id="sliderTable">
-                <!-- Investment rows will be injected dynamically by app.js -->
-              </tbody>
-            </table>
-            <button id="clearBtn" class="btn btn-secondary">Clear All Values</button>
-          </div>
-        </section>
-
-        <!-- Chart & Summary Panel -->
-        <section id="chartPanel" class="card mb-4">
-          <div class="card-body">
-            <h2 class="card-title">Stock Value Over Time</h2>
-            <div id="chart" style="width: 100%; height: 450px;"></div>
-            <div class="table-responsive mt-3">
-              <table id="summaryTable" class="table table-bordered">
-                <thead class="table-primary">
-                  <tr>
-                    <th>Year</th>
-                    <th>Stock<br>Price</th>
-                    <th>Invested<br>This Year</th>
-                    <th>Cumulative<br>Invested</th>
-                    <th>Match Vested<br>This Year</th>
-                    <th>Cumulative<br>Match Awarded</th>
-                    <th>Value of<br>Matching Shares</th>
-                    <th>Value of<br>Employee Shares</th>
-                    <th>Total<br>Current Value</th>
-                    <th>S&P500 Value</th>
-                  </tr>
-                </thead>
-                <tbody id="summaryBody">
-                  <!-- Summary rows injected dynamically -->
-                </tbody>
-              </table>
+    <!-- Tab Navigation -->
+    <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">
+          Overview
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="detailed-tab" data-bs-toggle="tab" data-bs-target="#detailed" type="button" role="tab">
+          Detailed Analysis
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="scenario-tab" data-bs-toggle="tab" data-bs-target="#scenario" type="button" role="tab">
+          Scenario Comparison
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="dashboardTabsContent">
+      <!-- Overview Tab: Investment Inputs and Dynamic Chart -->
+      <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+        <div class="row mt-4">
+          <!-- Input Panel -->
+          <div id="inputPanel" class="col-lg-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Investments by Year</h2>
+                <table class="table table-striped">
+                  <thead class="table-primary">
+                    <tr>
+                      <th>Year</th>
+                      <th>Stock Price</th>
+                      <th>Range</th>
+                      <th>Amount</th>
+                      <th>Apply →</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sliderTable">
+                    <!-- Rows injected by app.js -->
+                  </tbody>
+                </table>
+                <button id="clearBtn" class="btn btn-secondary">Clear All Values</button>
+              </div>
             </div>
           </div>
-        </section>
-
+          <!-- Chart & Summary Panel -->
+          <div id="chartPanel" class="col-lg-8 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Stock Value Over Time</h2>
+                <div id="chart" style="width: 100%; height: 450px;"></div>
+                <div class="table-responsive mt-3">
+                  <table id="summaryTable" class="table table-bordered">
+                    <thead class="table-primary">
+                      <tr>
+                        <th>Year</th>
+                        <th>Price</th>
+                        <th>Invested<br>This Year</th>
+                        <th>Cumulative<br>Invested</th>
+                        <th>Match<br>This Year</th>
+                        <th>Cumulative<br>Match</th>
+                        <th>Value<br>Match</th>
+                        <th>Value<br>Employee</th>
+                        <th>Total<br>Value</th>
+                        <th>S&P500</th>
+                      </tr>
+                    </thead>
+                    <tbody id="summaryBody">
+                      <!-- Data rows injected by app.js -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Disclosures -->
         <div id="disclosures" class="text-center text-muted">
           <p>Past performance is not a guarantee of future results</p>
-          <p>Does not include considerations on taxes owed for matching shares or capital gains taxes when shares are sold</p>
+          <p>Excludes tax implications on matching shares and capital gains.</p>
         </div>
-      </main>
+      </div>
+
+      <!-- Detailed Analysis Tab: Advanced Metrics & Parameter Controls -->
+      <div class="tab-pane fade" id="detailed" role="tabpanel" aria-labelledby="detailed-tab">
+        <div class="row mt-4">
+          <!-- Parameters Panel -->
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Advanced Parameters</h2>
+                <div class="mb-3">
+                  <label for="matchRateInput" class="form-label">Match Rate (%)</label>
+                  <input type="number" id="matchRateInput" class="form-control" value="25" min="0" max="100">
+                </div>
+                <div class="mb-3">
+                  <label for="vestingInput" class="form-label">Vesting Period (years)</label>
+                  <input type="number" id="vestingInput" class="form-control" value="5" min="1" max="20">
+                </div>
+                <button id="applyParams" class="btn btn-primary">Apply Parameters</button>
+              </div>
+            </div>
+          </div>
+          <!-- Metrics Panel -->
+          <div class="col-lg-8 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Advanced Metrics</h2>
+                <div id="detailedMetrics">
+                  <!-- Advanced metrics (ROI, CAGR, etc.) will be injected here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario Comparison Tab: Future Projections -->
+      <div class="tab-pane fade" id="scenario" role="tabpanel" aria-labelledby="scenario-tab">
+        <div class="row mt-4">
+          <!-- Scenario Controls -->
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Scenario Settings</h2>
+                <div class="mb-3">
+                  <label for="projectionYears" class="form-label">Projection (years)</label>
+                  <input type="number" id="projectionYears" class="form-control" value="7" min="1" max="30">
+                </div>
+                <div class="mb-3">
+                  <label for="conservativeRate" class="form-label">Conservative Growth (%)</label>
+                  <input type="number" id="conservativeRate" class="form-control" value="5" min="0" max="50">
+                </div>
+                <div class="mb-3">
+                  <label for="baseRate" class="form-label">Base Growth (%)</label>
+                  <input type="number" id="baseRate" class="form-control" value="10" min="0" max="50">
+                </div>
+                <div class="mb-3">
+                  <label for="aggressiveRate" class="form-label">Aggressive Growth (%)</label>
+                  <input type="number" id="aggressiveRate" class="form-control" value="15" min="0" max="50">
+                </div>
+                <button id="updateScenario" class="btn btn-primary">Update Scenarios</button>
+              </div>
+            </div>
+          </div>
+          <!-- Scenario Chart Panel -->
+          <div class="col-lg-8 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Future Projection Comparison</h2>
+                <div id="scenarioChart" style="width: 100%; height: 450px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
     </div>
   </div>
 

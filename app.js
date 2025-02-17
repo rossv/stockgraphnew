@@ -56,7 +56,11 @@ historicalData.forEach((item, index) => {
   row.innerHTML = `
     <td>${item.year}</td>
     <td>${formatPrice(item.price)}</td>
-    <td><input type="range" min="0" max="20000" step="100" value="0" id="slider-${item.year}"></td>
+    <td>
+      <div class="slidecontainer">
+        <input type="range" min="0" max="20000" step="100" value="0" id="slider-${item.year}" class="slider">
+      </div>
+    </td>
     <td><input type="text" id="number-${item.year}" value="${formatCurrency(0)}"></td>
     <td><button class="btn btn-sm btn-outline-primary" onclick="applyToSubsequentYears(${index})">Apply →</button></td>
   `;
@@ -368,16 +372,4 @@ document.getElementById("clearBtn").addEventListener("click", () => {
   });
   document.getElementById("summaryBody").innerHTML = "";
   document.getElementById("detailedBody").innerHTML = "";
-  Plotly.purge("chart");
-  updateCalculation();
-});
-
-// Button to jump to the Projected Growth tab
-document.getElementById("goToProjectionBtn").addEventListener("click", () => {
-  const triggerEl = document.getElementById("projected-tab");
-  const tab = new bootstrap.Tab(triggerEl);
-  tab.show();
-});
-
-// Initialize simulation and scenario chart on load
-updateCalculation();
+  Plot

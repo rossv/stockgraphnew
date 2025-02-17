@@ -56,7 +56,7 @@ input[type="range"] {
 
 /* Slider thumb and track changed to green */
 input[type="range"]::-webkit-slider-thumb {
-  background: var(--main-green);
+  background: var(--main-blue);
 }
 input[type="range"]::-moz-range-thumb {
   background: var(--main-green);

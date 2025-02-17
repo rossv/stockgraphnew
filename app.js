@@ -109,6 +109,7 @@ function updateCalculation() {
 
   // Arrays for chart data
   let investedValueArray = [];
+  let employeeValueArray = [];
   let totalValueArray = [];
   let sp500ValueArray = [];
 
@@ -141,7 +142,7 @@ function updateCalculation() {
     const currentValueMatching = cumulativeMatchingShares * currentStockPrice;
     const totalCurrentValue = currentValueEmployee + currentValueMatching;
     
-    // S&P500 simulation and price
+    // S&P500 simulation and price formatting with commas
     const sp500Record = sp500Close.find(rec => rec.year === simYear);
     const sp500Price = sp500Record ? sp500Record.close : "";
     const currentClose = sp500Record ? sp500Record.close : null;
@@ -188,6 +189,7 @@ function updateCalculation() {
     `;
     
     investedValueArray.push(cumulativeEmployeeInvested);
+    employeeValueArray.push(currentValueEmployee);
     totalValueArray.push(totalCurrentValue);
     sp500ValueArray.push(sp500Value);
     
@@ -195,7 +197,7 @@ function updateCalculation() {
     finalTotalValue = totalCurrentValue;
   });
   
-  // Render the simplified Historical Performance chart
+  // Render the Historical Performance chart with four traces
   Plotly.newPlot("chart", [
     {
       x: simYears,
@@ -205,6 +207,15 @@ function updateCalculation() {
       fillcolor: "rgba(99,102,106,0.5)",
       line: { color: "rgba(99,102,106,0.8)" },
       hovertemplate: '$%{y:,.0f}<extra>Cumulative Invested</extra>'
+    },
+    {
+      x: simYears,
+      y: employeeValueArray,
+      name: "Employee Shares Value",
+      fill: "tonexty",
+      fillcolor: "rgba(67,176,42,0.5)",
+      line: { color: "rgba(67,176,42,0.8)" },
+      hovertemplate: '$%{y:,.0f}<extra>Employee Value</extra>'
     },
     {
       x: simYears,

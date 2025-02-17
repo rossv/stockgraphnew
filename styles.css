@@ -17,9 +17,21 @@ body {
   font-weight: bold;
   color: var(--main-green) !important;
 }
+.navbar {
+  background-color: #fff !important;
+}
 .logo {
   max-height: 40px;
   margin-right: 10px;
+}
+
+/* Tab Styling: Use green for tab text */
+.nav-tabs .nav-link {
+  color: var(--main-green) !important;
+}
+.nav-tabs .nav-link.active {
+  color: var(--main-green) !important;
+  border-color: var(--main-green) !important;
 }
 
 /* Table Headers */
@@ -42,11 +54,17 @@ input[type="range"] {
   width: 100%;
 }
 
-/* Custom slider thumb for Webkit & Firefox */
+/* Slider thumb and track changed to green */
 input[type="range"]::-webkit-slider-thumb {
   background: var(--main-green);
 }
 input[type="range"]::-moz-range-thumb {
+  background: var(--main-green);
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--main-green);
+}
+input[type="range"]::-moz-range-track {
   background: var(--main-green);
 }
 
@@ -67,6 +85,30 @@ input[type="number"] {
 }
 .btn-outline-primary:hover {
   background-color: var(--main-green);
+  color: #fff;
+}
+
+/* Export CSV Button styling (rgb(198,54,99)) */
+#exportCSV {
+  background-color: var(--main-magenta);
+  border-color: var(--main-magenta);
+  color: #fff;
+}
+#exportCSV:hover {
+  background-color: var(--main-magenta);
+  border-color: var(--main-magenta);
+  color: #fff;
+}
+
+/* Go to Projected Growth Button styling (rgb(198,54,99)) */
+#goToProjectionBtn {
+  background-color: var(--main-magenta);
+  border-color: var(--main-magenta);
+  color: #fff;
+}
+#goToProjectionBtn:hover {
+  background-color: var(--main-magenta);
+  border-color: var(--main-magenta);
   color: #fff;
 }
 

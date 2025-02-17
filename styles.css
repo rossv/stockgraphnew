@@ -12,6 +12,22 @@ body {
   color: #212529;
 }
 
+/* Navbar Logo and Header */
+.navbar-brand {
+  font-weight: bold;
+  color: var(--main-green) !important;
+}
+.logo {
+  max-height: 40px;
+  margin-right: 10px;
+}
+
+/* Table Headers */
+.table thead th {
+  background-color: var(--main-green) !important;
+  color: #fff;
+}
+
 /* Card & Table Styling */
 .card {
   margin-bottom: 1rem;
@@ -25,6 +41,15 @@ body {
 input[type="range"] {
   width: 100%;
 }
+
+/* Custom slider thumb for Webkit & Firefox */
+input[type="range"]::-webkit-slider-thumb {
+  background: var(--main-green);
+}
+input[type="range"]::-moz-range-thumb {
+  background: var(--main-green);
+}
+
 input[type="text"],
 input[type="number"] {
   width: 100%;
@@ -33,4 +58,19 @@ input[type="number"] {
   padding: 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
+}
+
+/* Apply Button Styling */
+.btn-outline-primary {
+  border-color: var(--main-green);
+  color: var(--main-green);
+}
+.btn-outline-primary:hover {
+  background-color: var(--main-green);
+  color: #fff;
+}
+
+/* Ensure Scenario Chart fills full width */
+#scenarioChart {
+  width: 100% !important;
 }

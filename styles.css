@@ -1,13 +1,8 @@
 :root {
-  --main-green: rgb(67,176,42);
   --main-gray: rgb(99,102,106);
+  --main-green: rgb(67,176,42);
   --main-blue: rgb(0,130,186);
-  --invested-color: rgb(198,54,99);
-  --header-blue: #0082BA;
-  --table-invested-bg: #E0E0E0;
-  --table-emp-bg: #C3E7C9;
-  --table-total-bg: #B3D7F2;
-  --table-sp500-bg: #FAD0EC;
+  --main-magenta: rgb(198,54,99);
 }
 
 /* Global Styles */

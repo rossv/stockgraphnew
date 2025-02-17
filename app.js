@@ -372,4 +372,16 @@ document.getElementById("clearBtn").addEventListener("click", () => {
   });
   document.getElementById("summaryBody").innerHTML = "";
   document.getElementById("detailedBody").innerHTML = "";
-  Plot
+  Plotly.purge("chart");
+  updateCalculation();
+});
+
+// Button to jump to the Projected Growth tab
+document.getElementById("goToProjectionBtn").addEventListener("click", () => {
+  const triggerEl = document.getElementById("projected-tab");
+  const tab = new bootstrap.Tab(triggerEl);
+  tab.show();
+});
+
+// Initialize simulation and scenario chart on load
+updateCalculation();

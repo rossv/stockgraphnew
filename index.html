@@ -12,10 +12,13 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar with Logo -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Stock Dashboard</a>
+      <a class="navbar-brand" href="#">
+        <img src="https://www.wadetrim.com/wp-content/uploads/wade-trim-logo_696x696.png" alt="Wade Trim Logo" class="logo">
+        Stock Dashboard
+      </a>
     </div>
   </nav>
 
@@ -49,7 +52,7 @@
                 <h2 class="card-title">Investments by Year</h2>
                 <p class="text-muted">Purchase assumed to be in April at the new stock price</p>
                 <table class="table table-striped">
-                  <thead class="table-primary">
+                  <thead>
                     <tr>
                       <th>Year</th>
                       <th>Stock Price</th>
@@ -77,7 +80,7 @@
                 <div id="chart" style="width: 100%; height: 450px;"></div>
                 <div class="table-responsive mt-3">
                   <table id="summaryTable" class="table table-bordered">
-                    <thead class="table-primary">
+                    <thead>
                       <tr>
                         <th>Year</th>
                         <th>Price</th>
@@ -111,7 +114,7 @@
                 <h2 class="card-title">Detailed Tabulation</h2>
                 <div class="table-responsive">
                   <table id="detailedTable" class="table table-bordered">
-                    <thead class="table-primary">
+                    <thead>
                       <tr>
                         <th>Year</th>
                         <th>Stock Price</th>
@@ -155,17 +158,21 @@
                 </div>
                 <div class="mb-3">
                   <label for="conservativeRate" class="form-label">Conservative Growth (%)</label>
+                  <small class="form-text text-muted">Typical stock market growth rate</small>
                   <input type="number" id="conservativeRate" class="form-control form-control-sm" value="6" min="0" max="50">
                 </div>
                 <div class="mb-3">
                   <label for="baseRate" class="form-label">Base Growth (%)</label>
+                  <small class="form-text text-muted">The calculated median Wade Trim stock growth rate.</small>
                   <input type="number" id="baseRate" class="form-control form-control-sm" value="19" min="0" max="50">
                 </div>
                 <div class="mb-3">
                   <label for="aggressiveRate" class="form-label">Aggressive Growth (%)</label>
+                  <small class="form-text text-muted">The calculated average Wade Trim stock growth rate.</small>
                   <input type="number" id="aggressiveRate" class="form-control form-control-sm" value="27" min="0" max="50">
                 </div>
                 <button id="updateScenario" class="btn btn-primary btn-sm">Update Scenarios</button>
+                <p class="mt-2 text-muted">Does not include additional future stock purchases.</p>
               </div>
             </div>
           </div>
@@ -177,7 +184,7 @@
                 <div id="scenarioChart" style="width: 100%; height: 450px;"></div>
                 <div class="table-responsive mt-3">
                   <table id="projectionTable" class="table table-bordered">
-                    <thead class="table-primary">
+                    <thead>
                       <tr>
                         <th>Year</th>
                         <th>Conservative</th>

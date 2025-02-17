@@ -169,4 +169,49 @@
                 <div class="mb-3">
                   <label for="aggressiveRate" class="form-label">Aggressive Growth (%)</label>
                   <small class="form-text text-muted">The calculated average Wade Trim stock growth rate.</small>
-                  <input type="number" id="aggressiveRate" class="form-control fo
+                  <input type="number" id="aggressiveRate" class="form-control form-control-sm" value="27" min="0" max="50">
+                </div>
+                <p class="mt-2 text-muted">Does not include additional future stock purchases.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Projection Chart and Table Panel -->
+          <div class="col-lg-8 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Projected Growth</h2>
+                <div id="scenarioChart" style="width: 100%; height: 450px;"></div>
+                <div class="table-responsive mt-3">
+                  <table id="projectionTable" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Year</th>
+                        <th>Conservative</th>
+                        <th>Base</th>
+                        <th>Aggressive</th>
+                      </tr>
+                    </thead>
+                    <tbody id="projectionBody">
+                      <!-- Projection table rows injected dynamically by app.js -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Disclosures -->
+        <div id="disclosuresProjection" class="text-center text-muted">
+          <p>Past performance is not a guarantee of future results</p>
+          <p>Excludes tax implications on matching shares and capital gains.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Script -->
+  <script src="app.js"></script>
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

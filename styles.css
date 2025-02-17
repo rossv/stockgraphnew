@@ -49,16 +49,10 @@ body {
   vertical-align: middle;
 }
 
-/* Input Styling */
-input[type="range"] {
-  width: 100%;
-}
-
-/* Custom Slider Styling */
+/* Custom Slider Styling (adapted from your example) */
 .slidecontainer {
   width: 100%;
 }
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -69,11 +63,9 @@ input[type="range"] {
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
 }
-
 .slider:hover {
   opacity: 1;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -82,7 +74,6 @@ input[type="range"] {
   background: #43B02A;  /* Green: rgb(67,176,42) */
   cursor: pointer;
 }
-
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
@@ -90,7 +81,7 @@ input[type="range"] {
   cursor: pointer;
 }
 
-
+/* Input Styling for text and number inputs */
 input[type="text"],
 input[type="number"] {
   width: 100%;

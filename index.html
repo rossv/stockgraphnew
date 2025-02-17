@@ -12,8 +12,8 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <!-- Navigation Bar with Logo -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- Navigation Bar with Logo and White Background -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="https://www.wadetrim.com/wp-content/uploads/wade-trim-logo_696x696.png" alt="Wade Trim Logo" class="logo">
@@ -67,7 +67,7 @@
                 </table>
                 <div class="d-flex justify-content-between">
                   <button id="clearBtn" class="btn btn-secondary">Clear All Values</button>
-                  <button id="goToProjectionBtn" class="btn btn-primary">Go to Projected Growth</button>
+                  <button id="goToProjectionBtn" class="btn" type="button">Go to Projected Growth</button>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@
                     </tbody>
                   </table>
                 </div>
-                <button id="exportCSV" class="btn btn-primary">Export to CSV</button>
+                <button id="exportCSV" class="btn" type="button">Export to CSV</button>
               </div>
             </div>
           </div>
@@ -171,7 +171,6 @@
                   <small class="form-text text-muted">The calculated average Wade Trim stock growth rate.</small>
                   <input type="number" id="aggressiveRate" class="form-control form-control-sm" value="27" min="0" max="50">
                 </div>
-                <button id="updateScenario" class="btn btn-primary btn-sm">Update Scenarios</button>
                 <p class="mt-2 text-muted">Does not include additional future stock purchases.</p>
               </div>
             </div>

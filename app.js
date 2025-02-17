@@ -241,7 +241,7 @@ function updateCalculation() {
     margin: { t: 40 }
   }, { responsive: true });
   
-  // Update scenario projections after recalculating historical simulation
+  // Also update the projections automatically whenever the historical simulation changes
   updateScenarioComparison();
 }
 
@@ -328,6 +328,12 @@ function updateScenarioComparison() {
   }
 }
 
+// Attach event listeners to projection input fields so that the projections update automatically
+document.getElementById("projectionYears").addEventListener("input", updateScenarioComparison);
+document.getElementById("conservativeRate").addEventListener("input", updateScenarioComparison);
+document.getElementById("baseRate").addEventListener("input", updateScenarioComparison);
+document.getElementById("aggressiveRate").addEventListener("input", updateScenarioComparison);
+
 // Export Detailed Tabulation table to CSV
 document.getElementById("exportCSV").addEventListener("click", () => {
   let csvContent = "data:text/csv;charset=utf-8,";
@@ -372,9 +378,6 @@ document.getElementById("goToProjectionBtn").addEventListener("click", () => {
   const tab = new bootstrap.Tab(triggerEl);
   tab.show();
 });
-
-// Update Scenario Comparison chart when button is clicked
-document.getElementById("updateScenario").addEventListener("click", updateScenarioComparison);
 
 // Initialize simulation and scenario chart on load
 updateCalculation();
